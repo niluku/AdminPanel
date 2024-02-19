@@ -1,0 +1,14 @@
+{% extends 'users/base.html' %}
+{% block body%}
+<div class="flex justify-center items-center"><img  class="w-35 h-60 mt-4" src="{{user_profile.photo.url}}" alt="prilfe image"></div>
+<form>
+    {% csrf_token %}
+    <div class="container mx-10 p-5">
+        <div class="mb-2 ml-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="">Username</label>
+            <div class="shadow appreance-none border rounded py-2 px-3 mr-10 text-gray-700" >{{user_profile}}</div>
+        </div>
+        <a href="{% url 'edit' %}" class="bg-blue-500 text-white ml-3 mt-3px my-7 px-4 py-2 rounded ">Edit</a>
+    </div> 
+</form>
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+    {% block body%}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                      <tr colspan="2">
+                        <th scope="col"></th>
+                        <th scope="col">User Information</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for usr in usrinfo %}
+                      <tr>
+                        <td>Username</td>
+                        <td>
+                            <input type="text" disabled placeholder="User name" value="{{usr.username}}">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Email</td>
+                        <td>
+                            <input type="text" disabled placeholder="Email" value="{{usr.email}}">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>First Name</td>
+                        <td>
+                            <input type="text" disabled placeholder="First Name" value="{{usr.firstName}}">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Last Name</td>
+                        <td>
+                            <input type="text" disabled placeholder="Last Name" value="{{usr.lastName}}">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Profile Picture</td>
+                        <td>
+                            <img src="dashboard/{{usr.photo.url}}" alt="profile photo" style="height: 100px; width: 100px;">
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+            <div class="col-md-6">
+                <table class="table">
+                    <thead>
+                      <tr colspan="2">
+                        <th scope="col"></th>
+                        <th scope="col">Contact Information</th>
+                        <th scope="col"></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Address</td>
+                        <td>
+                            <input type="text" disabled placeholder="Address" value="{{usr.Address}}">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>City</td>
+                        <td>
+                            <input type="text" disabled placeholder="City" value="{{usr.city}}">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Contury</td>
+                        <td>
+                            <input type="text" disabled placeholder="Contury" value="{{usr.country}}">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Postal Code</td>
+                        <td>
+                            <input type="text" disabled placeholder="Postal Code" value="{{usr.postalcode}}">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Phone Number</td>
+                        <td>
+                            <input type="text" disabled placeholder="Phone Number" value="{{usr.phoneNumber}}">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Company Name</td>
+                        <td>
+                            <input type="text" disabled placeholder="Company Name" value="{{usr.companyName}}">
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                  </table>
+                  <a type="button" href="{% url 'login' %}" class="btn btn-primary">Logout</a>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
